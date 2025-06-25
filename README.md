@@ -1,89 +1,39 @@
 # StegoVault-Project
 # 🧊 StegoVault – Ultimate Steganography Web Vault 🔐
 
-> **"Hide your secrets in plain sight."**  
-**StegoVault** is a web-based steganography tool that allows users to securely encode secret messages inside image files and decode them later — with optional password protection, speech output, and a clean, interactive interface.
+> “Hide your secrets in plain sight.”
+
+**StegoVault** is a modern web-based steganography vault that lets users hide and extract secret messages inside images. It includes an intuitive UI, password protection, dark/light mode toggle, and even text-to-speech. Designed as a part of a learning journey, this project blends creativity, security, and AI assistance into one clean experience.
 
 ---
 
-## 📌 Table of Contents
+## 🧠 Project Overview
 
-- [🧠 About the Project](#-about-the-project)
-- [💡 Key Features](#-key-features)
-- [📸 How It Works](#-how-it-works)
-- [🛠️ Tech Stack](#-tech-stack)
-- [🚀 Getting Started](#-getting-started)
-- [📂 Project Structure](#-project-structure)
-- [🌐 Deployment](#-deployment)
-- [📄 License](#-license)
+StegoVault was built to explore secure communication through steganography using web technologies. Inspired by real-world spy concepts, it allows anyone to **encode secret text messages into images** and decode them later — with an optional password.
+
+The project was created as part of a self-driven internship goal to combine **learning frontend + backend development**, understand **how data can be hidden in plain sight**, and experiment with **AI-generated design ideas**.
 
 ---
 
-## 🧠 About the Project
+## 🚀 Features
 
-**StegoVault** was built as a personal learning project during my web development internship to explore both frontend and backend development concepts. It combines **image processing** and **data hiding (steganography)** to create a practical, fun, and secure way to share private messages.
-
-It was also my attempt to merge traditional development with **AI-assisted tools** for more productivity and creativity.
-
----
-
-## 💡 Key Features
-
-- 📷 **Upload image and encode message**
-- 🔓 **Decode messages from encoded images**
-- 🛡️ **Password-based double security**
-- 🌙 **Dark Mode / Light Mode toggle**
-- 🗣️ **Text-to-Speech playback of secret messages**
-- 📱 **Mobile-responsive and clean UI**
+- 📥 Upload image and encode secret messages
+- 🔓 Decode messages from an encoded image
+- 🛡️ Password-protected decoding (optional)
+- 🌗 Dark Mode / Light Mode toggle
+- 🗣️ Speak the decoded message aloud (TTS)
+- 💾 Download encoded image
+- 🖼️ Clean, responsive, and interactive UI
 
 ---
 
-## 📸 How It Works
+## 🛠️ Technologies Used
 
-🔐 **Encoding (Hide Message):**
+### 💻 Frontend
+- HTML5  
+- CSS3 (Dark/Light Mode Toggle)
+- JavaScript (DOM interaction, TTS)
 
-1. Upload an image file (`.png` / `.jpg`)
-2. Enter a secret message
-3. (Optional) Enter a password for protection
-4. Click **Encode**
-5. Download the newly generated **secret image**
-
-🔍 **Decoding (Reveal Message):**
-
-1. Upload the encoded image
-2. Enter the password (if used)
-3. Click **Decode**
-4. Read or listen to the original message
-
-📌 Uses the **LSB (Least Significant Bit)** steganography technique under the hood.
-
----
-
-## 🛠️ Tech Stack
-
-### 🌐 Frontend
-- `HTML5`
-- `CSS3` (with dark/light theming)
-- `JavaScript`
-- `Web Speech API` (for message voice playback)
-
-### 🧠 Backend
-- `Python 3`
-- `Flask` – lightweight Python web framework
-- `Stegano` – steganography library for encoding/decoding
-- `Pillow` – for image manipulation
-
-### 📦 Others
-- `gTTS` (optional): For generating downloadable spoken messages
-- `.env` and `dotenv`: For secure API or config handling
-- `Git + GitHub`: Version control
-- `Netlify` or `Render`: For hosting frontend/backend
-
----
-
-## 🚀 Getting Started
-
-### 1. Clone the Repo
-```bash
-git clone https://github.com/your-username/stegovault.git
-cd stegovault
+### 🧪 Backend
+- **Node.js**
+- **Express.js** – Web server
