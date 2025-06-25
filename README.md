@@ -1,39 +1,92 @@
 # StegoVault-Project
-# 🧊 StegoVault – Ultimate Steganography Web Vault 🔐
+# 🕵️‍♂️ StegoVault – Secure Message Vault
 
-> “Hide your secrets in plain sight.”
-
-**StegoVault** is a modern web-based steganography vault that lets users hide and extract secret messages inside images. It includes an intuitive UI, password protection, dark/light mode toggle, and even text-to-speech. Designed as a part of a learning journey, this project blends creativity, security, and AI assistance into one clean experience.
-
----
-
-## 🧠 Project Overview
-
-StegoVault was built to explore secure communication through steganography using web technologies. Inspired by real-world spy concepts, it allows anyone to **encode secret text messages into images** and decode them later — with an optional password.
-
-The project was created as part of a self-driven internship goal to combine **learning frontend + backend development**, understand **how data can be hidden in plain sight**, and experiment with **AI-generated design ideas**.
+**StegoVault** is a full-stack web application that allows users to **hide (encode)** and **reveal (decode)** secret messages within PNG images using **LSB steganography**. It offers a simple, user-friendly interface to securely transmit confidential information, protected with a password. Built entirely with **JavaScript**, it includes a custom dark mode, voice playback, and instant download functionality.
 
 ---
 
 ## 🚀 Features
 
-- 📥 Upload image and encode secret messages
-- 🔓 Decode messages from an encoded image
-- 🛡️ Password-protected decoding (optional)
-- 🌗 Dark Mode / Light Mode toggle
-- 🗣️ Speak the decoded message aloud (TTS)
-- 💾 Download encoded image
-- 🖼️ Clean, responsive, and interactive UI
+- 🔐 Hide messages inside PNG images securely
+- 🔓 Decode hidden messages using a password
+- 🌓 Toggle between Light and Dark themes
+- 🔊 Speak the decoded message using Text-to-Speech
+- 📥 Download the stego image instantly after encoding
+- 🛡️ Password protection using simple steganographic rules
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
 ### 💻 Frontend
-- HTML5  
-- CSS3 (Dark/Light Mode Toggle)
-- JavaScript (DOM interaction, TTS)
+- **HTML** – Page structure
+- **CSS** – Responsive and modern UI styling
+- **JavaScript (Vanilla)** – Interactivity and API communication
+- **Web APIs** – `fetch`, `FormData`, `SpeechSynthesis`, `DOM`
 
-### 🧪 Backend
-- **Node.js**
-- **Express.js** – Web server
+### 🌐 Backend
+- **Node.js** – JavaScript runtime environment
+- **Express.js** – REST API server framework
+- **Multer** – File upload handling (PNG images)
+- **PNG.js** – Read and manipulate PNG pixels
+- **CORS** – Enable secure frontend-backend communication
+- **fs** – Handle file system operations
+
+---
+
+## 📁 Project Structure
+
+stegovault/
+│
+├── backend/
+│ ├── server.js # Express server + encode/decode logic
+│ ├── package.json # Node.js dependencies
+│
+├── frontend/
+│ ├── index.html # UI layout
+│ ├── style.css # Theme and styling
+│ └── script.js # JS logic for encode/decode + API calls
+│
+└── README.md
+
+**💡 How It Works**
+**▶️ Encoding (Hiding a Message)**
+--Upload a .png image
+
+--Enter your secret message and password
+
+--The message is embedded into the least significant bits (LSBs) of the red channel of each pixel
+
+--A 00000000 binary marker is appended to signify the end of the message
+
+--The result is a stego image that can be downloaded instantly
+
+**🔍 Decoding (Revealing a Message)**
+--Upload the stego PNG image
+
+--Enter the password used during encoding
+
+--The backend reads pixel LSBs, reconstructs the binary message, and validates the password
+
+--The final message is displayed and can be spoken aloud
+
+**🧪 Example Use Cases**
+--Securely transmit short passwords or access codes via image
+
+--Educational demonstration of LSB-based steganography
+
+--Personal or academic cryptography projects
+
+**🔒 Security Notes**
+--Only PNG images are supported (to ensure pixel accuracy)
+
+--Password and message are concatenated as password::message before encoding
+
+--For added security, AES encryption can be integrated (future enhancement)
+
+
+
+
+
+
+
